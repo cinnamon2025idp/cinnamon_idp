@@ -1,39 +1,4 @@
 <!doctype html>
-<html lang="id">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Landing Page - Produk Digital Islami</title>
-<meta name="description" content="Cek Hafalan Al-Qur'an - Produk Digital" />
-<style>
-:root{--bg:#f7fafc;--card:#ffffff;--accent:#2563eb;--muted:#6b7280}
-*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:var(--bg);color:#111}
-.container{max-width:980px;margin:48px auto;padding:24px}
-header{display:flex;align-items:center;justify-content:space-between}
-.logo{font-weight:700;color:var(--accent)}
-.hero{display:grid;grid-template-columns:1fr 380px;gap:24px;margin-top:28px}
-.card{background:var(--card);padding:24px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
-h1{margin:0 0 12px;font-size:28px}
-p.lead{margin:0 0 18px;color:var(--muted)}
-.features{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
-.feature{padding:10px 14px;border-radius:10px;background:#f1f5f9;font-size:14px}
-.cta{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600}
-form input, form button{width:100%;padding:10px;border-radius:8px;border:1px solid #e6edf3;margin-top:8px}
-footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
-@media (max-width:900px){.hero{grid-template-columns:1fr;}.container{margin:20px}}
-</style>
-</head>
-<body>
-<div class="container">
-<header>
-<div class="logo">CekHafalan • Excel</div>
-<nav aria-label="menu">
-<a href="#fitur">Fitur</a>
-</nav>
-</header>
-
-
-<main class="hero">
 <section class="card">
 <h1>Periksa Hafalan Al-Qur'an dengan Mudah</h1>
 <p class="lead">Cukup buka file Excel, pilih surat & ayat, lalu ketik huruf latin. Jika benar, huruf Arab rasm Utsmani akan muncul otomatis — persis seperti mushaf Madinah.</p>
@@ -74,4 +39,35 @@ footer{margin-top:18px;text-align:center;color:var(--muted);font-size:13px}
 <form id="signup" style="margin-top:12px" onsubmit="event.preventDefault();signup();">
 <input id="email" type="email" placeholder="Email kamu" required />
 <input id="name" type="text" placeholder="Nama (opsional)" />
+<button type="submit">Kirim Link</button>
+</form>
+<div id="msg" style="margin-top:12px;color:var(--muted);font-size:14px"></div>
+</aside>
+
+
+<section class="card" style="margin-top:20px">
+<h3>Video Demo</h3>
+<p style="color:var(--muted);font-size:14px">Lihat contoh penggunaan aplikasi langsung dalam video pendek berikut:</p>
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;margin-top:10px">
+<iframe src="https://www.youtube.com/embed/IQtRMapKtp4?rel=0" title="Demo Aplikasi Cek Hafalan Qur'an" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:12px" allowfullscreen></iframe>
+</div>
+</section>
+</main>
+
+
+<footer>
+© <span id="year"></span> CekHafalan • Dibuat dengan GitHub Pages
+</footer>
+</div>
+
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+function signup(){
+var email = document.getElementById('email').value;
+document.getElementById('msg').textContent = 'Terima kasih! Link akan dikirim ke ' + email + ' (contoh demo).';
+// NOTE: Integrasi nyata: hubungkan ke layanan email/PayPal/PayButton atau form payment.
+}
+</script>
+</body>
 </html>
